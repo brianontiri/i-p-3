@@ -1,0 +1,25 @@
+{{outlet}}
+<h1>WELCOME TO The BOOT </h1>
+
+<!-- Question Display section -->
+      <h2>Questions Available </h2>
+<div class="quiz">
+  <ol>
+    {{#each model.questions as |question|}}
+      <li>{{question-tile question=question}}</li>
+    {{/each}}
+  </ol>
+    {{new-question saveQuestion2="saveQuestion3"}}
+</div>
+
+<!-- Answer Display section -->
+<div class="answer">
+  <h2>Answers Available </h2>
+  <ol>
+    {{#each model.answers as |answer|}}
+        {{answer-tile answer=answer  }}
+    {{/each}}
+  </ol>
+
+  {{new-answer saveAnswer="saveAnswer"}}
+</div>

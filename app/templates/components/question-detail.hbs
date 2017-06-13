@@ -1,0 +1,7 @@
+<h2>{{question.question_area}}<br> ~{{question.author}}~ </h2><br>
+<button class="btn btn-danger"{{action 'delete' question}}>Delete</button><br>
+<h1>Answers</h1>
+  {{#each question.answers as |answer|}}
+    {{answer-tile answer=answer destroyAnswer="destroyAnswer"}}
+  {{/each}}
+<br>

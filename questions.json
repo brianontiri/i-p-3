@@ -1,0 +1,28 @@
+{
+  "questions": [{
+    "question_area": "where is kajiado??",
+    "author": "paul kimani",
+    "additional_notes": "answer idf you dont mind"
+  }, {
+    "question_area": "who is raila odinga?",
+    "author": "steve oduor",
+    "additional_notes": "i guess is a genius"
+  }, {
+    "question_area": "how much is unga in kenya?",
+    "author": "mary mtita",
+    "additional_notes": "maisha imepanda jameni"
+  }],
+  "answers": [{
+      "answer_area": "in kajiado county",
+      "author": "arap tinet"
+    },
+    {
+      "answer_area": "5th president of kenya",
+      "author": "kimani wa waiguru"
+    },
+    {
+      "answer_area": "500/=",
+      "author": "omwami mushikaka"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<div class="col-md-12">
+  <div class="all">
+{{outlet}}
+
+{{update-question question=model update="update"}}
+
+//passes the destroy question and answer to the route handler
+
+{{question-detail question=model destroyQuestion="destroyQuestion"}}
+
+{{new-answer saveAnswer="saveAnswer" question=model}}
+</div>
+</div>
