@@ -6,7 +6,7 @@
 <div class="quiz">
   <ol>
     {{#each model.questions as |question|}}
-      <li>{{question-popularity question}} {{question-tile question=question}} </li>
+      <li>{{question-popularity question}} {{question-tile question=question}}{{no-answer question}}{{yes-answer question}} </li>
     {{/each}}
   </ol>
     {{new-question saveQuestion2="saveQuestion3"}}
