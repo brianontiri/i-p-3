@@ -4,4 +4,13 @@
   {{#each question.answers as |answer|}}
     {{answer-tile answer=answer destroyAnswer="destroyAnswer"}}
   {{/each}}
+
+  <h2> Reviews </h2>
+<ul>
+  {{#each question.reviews as |review|}}
+    {{review-tile review=review destroyReview="destroyReview"}}
+  {{/each}}
+</ul>
+
+<button class="btn btn-primary"  {{action 'delete' question}}>Delete</button>
 <br>

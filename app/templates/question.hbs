@@ -6,8 +6,9 @@
 
 //passes the destroy question and answer to the route handler
 
-{{question-detail question=model destroyQuestion="destroyQuestion"}}
+{{question-detail question=model destroyQuestion="destroyQuestion" destroyReview="destroyReview"}}
 
 {{new-answer saveAnswer="saveAnswer" question=model}}
+{{new-review saveReview="saveReview" question=model}}
 </div>
 </div>

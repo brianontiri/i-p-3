@@ -16,7 +16,7 @@ export default Ember.Route.extend({
       question.save();
       this.transitionTo('index');
     },
-    
+
   //  Organize the question deletion promise
    destroyQuestion(question) {
          var answer_deletions = question.get('answers').map(function(answer) {
@@ -27,6 +27,16 @@ export default Ember.Route.extend({
          });
          this.transitionTo('index');
     },
+
+    destroyQuestion(question) {
+      var review_deletions = question.get('reviews').map(function(review) {
+        return review.destroyRecord();
+      });
+      Ember.RSVP.all(review_deletions).then(function() {
+        return question.destroyRecord();
+      });
+      this.transitionTo('index');
+    },
     //Save answer to firebaase
     saveAnswer(params) {
       var newAnswer = this.store.createRecord('answer', params);
@@ -36,6 +46,20 @@ export default Ember.Route.extend({
         return question.save();
       });
       this.transitionTo('question', question);
-    }
+    },
+
+    saveReview(params) {
+          var newReview = this.store.createRecord('review', params);
+          var question = params.question;
+          question.get('reviews').addObject(newReview);
+          newReview.save().then(function() {
+            return question.save();
+          });
+          this.transitionTo('question', question);
+        },
+        destroyReview(review) {
+     review.destroyRecord();
+     this.transitionTo('index');
+   }
   }
 });

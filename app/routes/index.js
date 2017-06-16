@@ -38,4 +38,10 @@ export default Ember.Route.extend({
     question.destroyRecord();
     this.transitionTo('index');
   },
+  // adding a new review
+  saveReview(params) {
+      var newReview = this.store.createRecord('review', params);
+      newReview.save();
+      this.transitionTo('index');
+    }
 });

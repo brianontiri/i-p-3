@@ -6,7 +6,7 @@
 <div class="quiz">
   <ol>
     {{#each model.questions as |question|}}
-      <li>{{question-tile question=question}}</li>
+      <li>{{question-popularity question}} {{question-tile question=question}} </li>
     {{/each}}
   </ol>
     {{new-question saveQuestion2="saveQuestion3"}}
@@ -17,9 +17,22 @@
   <h2>Answers Available </h2>
   <ol>
     {{#each model.answers as |answer|}}
-        {{answer-tile answer=answer  }}
+      {{answer-tile answer=answer  }}
     {{/each}}
   </ol>
 
   {{new-answer saveAnswer="saveAnswer"}}
 </div>
+
+<!-- display reviews -->
+<h2> All Reviews </h2>
+
+<ul>
+  {{#each model.reviews as |review|}}
+    <li>{{review.rating}} - {{review.content}} - by {{review.author}}</li>
+  {{/each}}
+</ul>
+
+{{new-review saveReview="saveReview"}}
+
+<hr>
